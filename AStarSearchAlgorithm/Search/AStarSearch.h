@@ -30,6 +30,9 @@ private:
 	std::unordered_set<std::string> closed_list;
 	std::multiset<Node> open_list;
 
+	// Compare given state with goal state and returns true if they match
+	bool isGoalState(const std::string& state);
+
 	// Computes heuristics to determine how close the current state is to the goal state (solution)
 	size_t heuristics(const EightPuzzle& puzzle);
 	// Computes and returns the heuristics based on number of displaced tiles

@@ -33,10 +33,8 @@ std::vector<char> AStarSearch::findPuzzleSolution(const int heuristics = 2)
 		current_node = open_list.begin();
 
 		// Compare current state to goal state
-		if (goal_state.compare(current_node->puzzle.state()) == 0) {
+		if (isGoalState(current_node->puzzle.state())) {
 			std::cout << "Goal state found!" << std::endl;
-			//current_node->puzzle.print();
-
 			std::cout << "\nNumber of steps: " << current_node->step_count << std::endl;
 			std::cout << "Number of iterations: " << n << std::endl;
 			std::cout << "Closed list size: " << closed_list.size() << std::endl;
@@ -61,17 +59,14 @@ std::vector<char> AStarSearch::findPuzzleSolution(const int heuristics = 2)
 
 	if (n == MAX_ITERATIONS)
 		std::cout << "Goal state was not found!"<< std::endl;
-
-	/*
-	std::multiset<Node>::iterator it{ open_list.begin() };
-	for (int i = 0; i < 100; ++i) {
-		std::cout << it->evaluation << std::endl;
-		it++;
-	}
-	*/
 	
 	// Return the path to the solution
 	return current_node->puzzle.history;
+}
+
+bool AStarSearch::isGoalState(const std::string& state)
+{
+	return goal_state.compare(state) == 0;
 }
 
 size_t AStarSearch::heuristics(const EightPuzzle& puzzle)
