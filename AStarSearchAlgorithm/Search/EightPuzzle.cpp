@@ -26,7 +26,7 @@ void EightPuzzle::moveUp() {
 		std::swap(matrix[empty_space.row * 3 + empty_space.column], matrix[(empty_space.row - 1) * 3 + empty_space.column]);
 		empty_space.row -= 1;
 		// Save move in the history stack
-		history.push_back("up");
+		history.push_back('U');
 	}
 }
 
@@ -35,7 +35,7 @@ void EightPuzzle::moveDown() {
 		std::swap(matrix[empty_space.row * 3 + empty_space.column], matrix[(empty_space.row + 1) * 3 + empty_space.column]);
 		empty_space.row += 1;
 		// Save move in the history stack
-		history.push_back("down");
+		history.push_back('D');
 	}
 }
 
@@ -44,7 +44,7 @@ void EightPuzzle::moveLeft() {
 		std::swap(matrix[empty_space.row * 3 + empty_space.column], matrix[empty_space.row * 3 + (empty_space.column - 1)]);
 		empty_space.column -= 1;
 		// Save move in the history stack
-		history.push_back("left");
+		history.push_back('L');
 	}
 }
 
@@ -53,7 +53,7 @@ void EightPuzzle::moveRight() {
 		std::swap(matrix[empty_space.row * 3 + empty_space.column], matrix[empty_space.row * 3 + (empty_space.column + 1)]);
 		empty_space.column += 1;
 		// Save move in the history stack
-		history.push_back("right");
+		history.push_back('R');
 	}
 }
 

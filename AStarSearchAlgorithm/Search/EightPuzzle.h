@@ -13,7 +13,7 @@ struct EightPuzzle {
 
 	size_t matrix[9];
 	MatrixPosition empty_space;
-	std::vector<std::string> history;
+	std::vector<char> history;
 
 	// Constructor
 	EightPuzzle(const size_t initial_state[]);

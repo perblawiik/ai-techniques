@@ -10,7 +10,7 @@ public:
 	~AStarSearch();
 
 	// Search for the shortest path for solving the puzzle and return the path
-	std::vector<std::string> findPuzzleSolution(const int heuristicsFunction);
+	std::vector<char> findPuzzleSolution(const int heuristicsFunction);
 
 	class Node {
 	public:

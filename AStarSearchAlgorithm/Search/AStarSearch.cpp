@@ -17,7 +17,7 @@ AStarSearch::AStarSearch(const EightPuzzle& puzzle, const std::string& goal_stat
 AStarSearch::~AStarSearch()
 { }
 
-std::vector<std::string> AStarSearch::findPuzzleSolution(const int heuristics = 2)
+std::vector<char> AStarSearch::findPuzzleSolution(const int heuristics = 2)
 {
 	heuristicsFunction = heuristics;
 	std::cout << "\nSolving puzzle with heuristics function h" << heuristics << "..\n" << std::endl;
